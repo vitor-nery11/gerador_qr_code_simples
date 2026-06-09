@@ -1,5 +1,6 @@
 import qrcode 
 import time 
+import os 
 
 def gerar_qr_code(link,nome_arquivo):
     print(f'Aguarde o qr code {nome_arquivo} esta sendo gerado..')
@@ -7,7 +8,9 @@ def gerar_qr_code(link,nome_arquivo):
 
     qr = qrcode.make(link)
 
-    qr.save(f'{nome_arquivo}.png')
+    os.makedirs('qrcodes', exist_ok= True)
+
+    qr.save(f'qrcodes/{nome_arquivo}.png')
 
     print(f'QR code {nome_arquivo} criado com sucesso!!')
 
@@ -25,5 +28,5 @@ while True:
     continuar = input('Deseja criar outro? (s/n):')
 
     if continuar.lower() != 's':
-        print('Agradecemos por utilizar')
+        print('Agradecemos por utilizar!!')
         break
