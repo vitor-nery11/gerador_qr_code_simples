@@ -12,11 +12,18 @@ def gerar_qr_code(link,nome_arquivo):
     print(f'QR code {nome_arquivo} criado com sucesso!!')
 
 
+while True:
 
-print('Seja bem vindo ao gerador de qr code')
+    print('Seja bem vindo ao gerador de qr code')
 
-link = input('Envie o link que você quer transforar em qr code:')
+    link = input('Envie o link que você quer transforar em qr code:')
 
-nome_arquivo = input('Digite o nome que seu arquivo será salvo:')
+    nome_arquivo = input('Digite o nome que seu arquivo será salvo:')
 
-gerar_qr_code(link, nome_arquivo)
+    gerar_qr_code(link, nome_arquivo)
+
+    continuar = input('Deseja criar outro? (s/n):')
+
+    if continuar.lower() != 's':
+        print('Agradecemos por utilizar')
+        break
