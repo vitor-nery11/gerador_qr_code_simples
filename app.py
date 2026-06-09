@@ -15,6 +15,9 @@ def gerar_qr_code(link,nome_arquivo):
     print(f'QR code {nome_arquivo} criado com sucesso!!')
 
 
+
+executado = 0 
+
 while True:
 
     print('Seja bem vindo ao gerador de qr code')
@@ -25,8 +28,12 @@ while True:
 
     gerar_qr_code(link, nome_arquivo)
 
+    executado += 1
+
     continuar = input('Deseja criar outro? (s/n):')
 
     if continuar.lower() != 's':
+        print(f'Total de qr code gerados: {executado}')
         print('Agradecemos por utilizar!!')
+
         break
